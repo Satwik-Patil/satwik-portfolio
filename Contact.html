@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        z-index: 0;
+      }
+
+      @media only screen and (max-width: 768px) {
+        header .nav {
+          display: none;
+        }
+        .menu {
+          display: block;
+          width: 20%;
+          margin-right: 4%;
+        }
+        .box h2 {
+          padding: 0px 0px 9px 35px !important;
+        }
+        .bgcolor {
+          background-color: #e6dace;
+          width: 100% !important;
+        }
+
+        .card {
+          margin-top: -109% !important;
+          justify-content: center;
+        }
+        .side {
+          width: 50% !important;
+          margin-top: 100% !important;
+        }
+      }
+      @media only screen and (min-width: 768px) {
+        .menu {
+          display: none;
+        }
+      }
+      @media only screen and (max-width: 835px) {
+        .nav ul {
+          display: flex;
+          gap: 30px;
+        }
+        .card {
+          margin-top: -109% !important;
+          justify-content: center;
+        }
+      }
+
+      @media only screen and (max-width: 670px) {
+        .menu {
+          display: block;
+          width: 20%;
+          margin-right: 8%;
+        }
+        .box h2,
+        span {
+          font-size: large !important;
+        }
+        h2::before {
+          width: 20px !important;
+          height: 20px !important;
+        }
+        .bgcolor {
+          background-color: #e6dace;
+          width: 100% !important;
+        }
+        .card {
+          margin-top: -109% !important;
+          justify-content: center;
+        }
+      }
+
+      @media only screen and (max-width: 500px) {
+        .menu {
+          display: block;
+          width: 20%;
+          margin-right: 8%;
+        }
+        .box h2,
+        span {
+          font-size: large;
+          width: 100%;
+        }
+        h2::before {
+          width: 15px !important;
+          height: 15px !important;
+        }
+        .bgcolor {
+          background-color: #e6dace;
+          width: 100% !important;
+        }
+      }
+
+      @media only screen and(min-width:500%) {
+        .bgcolor {
+          background-color: #e6dace;
+          width: 100% !important;
+        }
+      }
+      .resume {
+        background-color: #e6dace;
+      }
+
+      header {
+        display: flex;
+        background-color: #fff;
+        padding: 1.5rem;
+        align-items: center;
+        justify-content: space-evenly;
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+      }
+
+      ul {
+        list-style-type: none;
+        display: flex;
+        gap: 50px;
+        margin: 0;
+        color: black;
+      }
+      .box {
+        position: relative;
+      }
+      .box h2 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        margin: 0;
+        padding: 0px 190px 9px 35px;
+        align-items: center;
+        font-size: xx-large;
+        width: 100%;
+      }
+
+      span {
+        font-weight: 200;
+        font-size: large;
+      }
+      ul li:hover {
+        color: blue;
+      }
+      header ul a {
+        text-decoration: none;
+        font-size: 15px;
+      }
+      h2::before {
+        position: absolute;
+        width: 23px;
+        height: 23px;
+        content: "";
+        background-color: blue;
+        margin-top: 1%;
+        left: 0;
+      }
+      .menu {
+        position: relative;
+      }
+
+      .down {
+        position: absolute;
+        display: none;
+      }
+
+      .menu:hover .down {
+        display: block;
+
+        background-color: rgba(128, 128, 128, 0.374);
+      }
+      .drop {
+        cursor: pointer;
+        margin-left: 60%;
+      }
+
+      .down nav ul {
+        display: flex;
+        gap: 0px;
+        flex-direction: column !important;
+        text-decoration: none;
+        text-align: center;
+      }
+
+      .down li {
+        color: white;
+        margin-left: -40%;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+      }
+
+      .formgroup {
+        margin-bottom: 15px;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid rgba(34, 0, 255, 0.792);
+      }
+
+      .formgroup label {
+        margin-bottom: 5px;
+      }
+      .formgroup input,
+      .formgroup textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        resize: none;
+      }
+      .formgroup textarea {
+        height: 100px;
+      }
+      input :focus {
+        outline: none;
+      }
+      #message,
+      #first-name,
+      #last-name,
+      #email,
+      #subject,
+      fieldset {
+        outline: none;
+        border: none;
+      }
+      .flex {
+        display: flex;
+        gap: 20px;
+      }
+      button {
+        background-color: rgba(0, 0, 255, 0.625);
+        color: white;
+        padding: 10px 20px 10px 20px;
+        border: none;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body style="background-color: #e6dace">
+    <header>
+      <div class="box">
+        <h2>Satwik Patil<span>/ PROJECT MANAGER</span></h2>
+      </div>
+      <nav class="nav">
+        <ul>
+          <a href=""></a><a href=""></a><a href=""></a>
+          <a href="Bootstrap.html"><li>ABOUTME</li></a>
+          <a href="Rusme.html"><li>RESUME</li></a>
+          <a href="Project.html"><li>PROJECT</li></a>
+          <a href="Contact.html"><li>CONTACT</li></a>
+        </ul>
+      </nav>
+      <div class="menu">
+        <div class="drop">
+          <img src="menu-outline.svg" alt="" width="30px" height="30px" />
+        </div>
+        <div class="down" id="tn">
+          <nav>
+            <ul>
+              <a href="Bootstrap.html"><li>ABOUT ME</li></a>
+              <a href="Rusme.html"><li>RESUME</li></a>
+              <a href="Project.html"><li>PROJECT</li></a>
+              <a href="Contact.html"><li>CONTACT</li></a>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <br /><br /><br /><br /><br /><br />
+    <div>
+      <span> <h1 style="margin-left: 45%">Lets Talk</h1></span>
+    </div>
+
+    <div class="container">
+      <form>
+        <div class="flex">
+          <div class="formgroup">
+            <label for="name">First Name*</label>
+            <input type="text" id="first-name" />
+          </div>
+          <div class="formgroup">
+            <label for="name">Last Name*</label>
+            <input type="text" id="last-name" />
+          </div>
+        </div>
+        <div class="formgroup">
+          <label for="email">Email</label>
+          <input type="email" id="email" />
+        </div>
+        <div class="formgroup">
+          <label for="name">Subject*</label>
+          <input type="text" id="subject" />
+        </div>
+        <div class="formgroup">
+          <label for="message">Message</label>
+          <textarea id="message" name="message"></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit">Send</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
